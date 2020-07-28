@@ -34,6 +34,14 @@ class ApplicationPolicy
     false
   end
 
+  module Utils
+    def admin_user?
+      user&.admin?
+    end
+  end
+
+  include Utils
+
   class Scope
     attr_reader :user, :scope
 

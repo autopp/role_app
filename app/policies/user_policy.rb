@@ -1,13 +1,13 @@
 class UserPolicy < ApplicationPolicy
   def index?
-    user.admin?
+    admin_user?
   end
 
   def show?
-    uesr.admin?
+    admin_user?
   end
 
   def edit?
-    user.admin?
+    admin_user?
   end
 end

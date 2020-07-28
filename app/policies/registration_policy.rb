@@ -1,9 +1,11 @@
 class RegistrationPolicy < Struct.new(:user, :registration)
+  include ApplicationPolicy::Utils
+
   def new?
-    user&.admin?
+    admin_user?
   end
 
   def create?
-    user&.admin?
+    admin_user?
   end
 end
